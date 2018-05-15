@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-from application import Application
-from contact import Contact
+from fixture.application import Application
+from model.contact import Contact
 import pytest
 
 
 @pytest.fixture
 def app(request):
     fixture = Application()
-    request.addfinalizer(app.destroy)
+    request.addfinalizer(fixture.destroy)
     return fixture
 
 
